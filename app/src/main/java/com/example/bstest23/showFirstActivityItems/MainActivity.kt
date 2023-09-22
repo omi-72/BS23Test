@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
                 nextActivity(DetailsActivity::class.java) {
                     putSerializable(
-                        "COFFEE_ITEM",
+                        "DETAILS_ITEM",
                         Gson().toJson(item)
                     )
                 }
