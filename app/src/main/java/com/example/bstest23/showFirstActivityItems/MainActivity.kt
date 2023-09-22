@@ -1,4 +1,4 @@
-package com.example.bstest23
+package com.example.bstest23.showFirstActivityItems
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
