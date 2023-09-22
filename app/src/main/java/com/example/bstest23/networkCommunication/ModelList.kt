@@ -5,8 +5,8 @@ import com.google.gson.JsonArray
 import retrofit2.Response
 
 data class ModelList (
-    var title: String = "",
-    var description: String = "",
+    var name: String = "",
+    var full_name: String = "",
     var imageThumbnail : String? = null,
     var details : MutableList<String> = mutableListOf()
 ){
@@ -33,12 +33,12 @@ data class ModelList (
 //                                //item.
 //                            }
 
-                            if(productJsonObject.get("title")!= null){
-                                item.title = productJsonObject.get("title").asString
+                            if(productJsonObject.get("name")!= null){
+                                item.name = productJsonObject.get("name").asString
                             }
 
-                            if(productJsonObject.get("description")!= null){
-                                item.description = productJsonObject.get("description").asString
+                            if(productJsonObject.get("full_name")!= null){
+                                item.full_name = productJsonObject.get("full_name").asString
                             }
 
                             if (productJsonObject.get("ingredients")!=null){

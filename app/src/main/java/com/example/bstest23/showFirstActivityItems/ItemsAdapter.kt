@@ -24,8 +24,8 @@ class ItemsAdapter(private var itemAdapterInterface: ItemAdapterInterface, priva
     override fun onBindViewHolder(holder: ItemsAdapter.ViewHolder, position: Int) {
         val item = dataList[position]
 
-        holder.binding.textViewTitle.text = item.title
-        holder.binding.textViewDetails.text = item.description
+        holder.binding.textViewName.text = item.name
+        holder.binding.textViewFullName.text = item.full_name
 
         Glide.with(context)
             .load(item.imageThumbnail)
@@ -59,7 +59,7 @@ class ItemsAdapter(private var itemAdapterInterface: ItemAdapterInterface, priva
         override fun getOldListSize(): Int = oldList.size
         override fun getNewListSize(): Int = newList.size
         override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
-            return oldList[oldItemPosition].title == newList[newItemPosition].title
+            return oldList[oldItemPosition].name == newList[newItemPosition].name
         }
 
         override fun areContentsTheSame(oldPosition: Int, newPosition: Int): Boolean {
