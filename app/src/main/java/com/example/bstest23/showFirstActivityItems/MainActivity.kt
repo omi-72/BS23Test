@@ -19,7 +19,6 @@ class MainActivity : AppCompatActivity() {
     private val viewModel: ItemViewModel by viewModels()
 
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -30,10 +29,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun prepareViews() {
-        followingTAdapter = ItemsAdapter(object : ItemAdapterInterface{
+        followingTAdapter = ItemsAdapter(object : ItemAdapterInterface {
 
             override fun onItemClick(item: ModelList) {
-                Log.d(this@MainActivity::class.java.simpleName,"item.ingredients.toString()::"+item.details.toString())
+                Log.d(
+                    this@MainActivity::class.java.simpleName,
+                    "item.ingredients.toString()::" + item.details.toString()
+                )
 
                 nextActivity(DetailsActivity::class.java) {
                     putSerializable(
@@ -50,9 +52,10 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
-
-fun <T> Context.nextActivity(it: Class<T>, extras: Bundle.() -> Unit = {}) {
-    val intent = Intent(this, it)
-    intent.putExtras(Bundle().apply(extras))
-    startActivity(intent)
 }
+
+    fun <T> Context.nextActivity(it: Class<T>, extras: Bundle.() -> Unit = {}) {
+        val intent = Intent(this, it)
+        intent.putExtras(Bundle().apply(extras))
+        startActivity(intent)
+    }
