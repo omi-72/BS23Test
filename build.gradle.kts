@@ -1,6 +1,8 @@
 buildscript {
     dependencies {
         classpath ("com.google.gms:google-services:4.4.0")
+        classpath ("com.google.android.gms:play-services-location:21.0.1")
+        classpath ("com.google.android.gms:play-services-gcm:17.0.0")
         classpath ("com.android.tools.build:gradle:8.1.0")
         classpath ("com.google.firebase:firebase-crashlytics-gradle:2.9.9")
         classpath ("com.vanniktech:gradle-maven-publish-plugin:0.24.0")

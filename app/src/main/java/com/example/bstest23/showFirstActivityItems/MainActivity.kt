@@ -7,6 +7,9 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import com.example.bstest23.databinding.ActivityMainBinding
+import com.example.bstest23.networkCommunication.ModelList
+import com.example.bstest23.nextItemsActivity.DetailsActivity
+import com.google.gson.Gson
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -27,6 +30,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun prepareViews() {
+        followingTAdapter = ItemsAdapter(object : ItemAdapterInterface {
+            override fun onItemClick(item: ModelList) {
+                Log.d(this@MainActivity::class.java.simpleName,"item.details.toString()::"+item.details.toString())
+
+                nextActivity(DetailsActivity::class.java) {
+                    putSerializable(
+                        "COFFEE_ITEM",
+                        Gson().toJson(item)
+                    )
+                }
+            }
+        })
+
         binding.recyclerView.adapter = followingTAdapter
         viewModel.followingTagDataList.observe(this) {
             followingTAdapter.updateData(it)
