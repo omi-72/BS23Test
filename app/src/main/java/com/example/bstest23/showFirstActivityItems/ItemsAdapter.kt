@@ -9,7 +9,7 @@ import com.bumptech.glide.Glide
 import com.example.bstest23.databinding.ItemListBinding
 import com.example.bstest23.networkCommunication.ModelList
 
-class ItemsAdapter(private var itemAdapterInterface: ItemAdapterInterface, private val context: Context):  RecyclerView.Adapter<ItemsAdapter.ViewHolder>() {
+class ItemsAdapter(private var itemAdapterInterface: ItemAdapterInterface):  RecyclerView.Adapter<ItemsAdapter.ViewHolder>() {
     private var dataList: MutableList<ModelList> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -27,9 +27,6 @@ class ItemsAdapter(private var itemAdapterInterface: ItemAdapterInterface, priva
         holder.binding.textViewName.text = item.name
         holder.binding.textViewFullName.text = item.full_name
 
-        Glide.with(context)
-            .load(item.imageThumbnail)
-            .into(holder.binding.imageViewThumbnail)
 
 
         holder.binding.root.setOnClickListener {
