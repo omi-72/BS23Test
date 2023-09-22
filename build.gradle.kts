@@ -1,8 +1,8 @@
 buildscript {
     dependencies {
-        classpath ("com.google.gms:google-services:4.3.15")
+        classpath ("com.google.gms:google-services:4.4.0")
         classpath ("com.android.tools.build:gradle:8.1.0")
-        classpath ("com.google.firebase:firebase-crashlytics-gradle:2.9.8")
+        classpath ("com.google.firebase:firebase-crashlytics-gradle:2.9.9")
         classpath ("com.vanniktech:gradle-maven-publish-plugin:0.24.0")
         classpath ("me.tylerbwong.gradle:metalava-gradle:0.2.3")
     }
@@ -13,6 +13,7 @@ buildscript {
 plugins {
     id("com.android.application") version "8.1.1" apply false
     id("org.jetbrains.kotlin.android") version "1.9.0" apply false
+
     id ("androidx.navigation.safeargs") version "2.5.1" apply false
 
 }

@@ -85,7 +85,4 @@ dependencies {
     //glide for image
     implementation ("com.github.bumptech.glide:glide:4.15.1")
     annotationProcessor ("com.github.bumptech.glide:compiler:4.15.1")
-
-    //Otp View
-    implementation ("com.github.aabhasr1:OtpView:v1.1.2")
 }

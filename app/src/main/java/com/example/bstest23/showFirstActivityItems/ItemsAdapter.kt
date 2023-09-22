@@ -21,7 +21,7 @@ class ItemsAdapter(private var itemAdapterInterface: ItemAdapterInterface, priva
 
         return ViewHolder(binding)
     }
-    override fun onBindViewHolder(holder: ItemsAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = dataList[position]
 
         holder.binding.textViewName.text = item.name
